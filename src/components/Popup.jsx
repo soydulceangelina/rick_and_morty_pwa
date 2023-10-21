@@ -13,11 +13,21 @@ export default function Popup({ character, popUp, toggleModal }) {
         <div className="popUp">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="popUp-content">
-            <img src={character.image} alt={character.name} />
-            <p>{character.name}</p>
-            <p>{character.gender}</p>
-            <p>{character.status}</p>
-            <p>{character.type}</p>
+            <article className="card" onClick={toggleModal}>
+              <img src={character.image} alt={character.name} />
+              <p>
+                <strong>Name:</strong> {character.name}
+              </p>
+              <p>
+                <strong>Gerder:</strong> {character.gender}
+              </p>
+              <p>
+                <strong>Status:</strong> {character.status}
+              </p>
+              <p>
+                <strong>Type:</strong> {character.type ? character.type : "???"}
+              </p>
+            </article>
             <button className="close-popUp" onClick={toggleModal}>
               CLOSE
             </button>
