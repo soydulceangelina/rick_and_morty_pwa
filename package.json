@@ -29,7 +29,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && cd build && surge --domain https://rick-and-morty-pwa.surge.sh/",
+    "deploy:nodomain": "npm run build && cd build && surge"
   },
   "eslintConfig": {
     "extends": [
