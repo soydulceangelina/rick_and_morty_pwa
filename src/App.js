@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-// API
-// import { fetchCharacters } from "./api/rickandmorty";
 // components
 import Characters from "./components/Characters";
 import Pagination from "./components/Pagination";
+import Header from "./components/Header";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -42,11 +41,9 @@ function App() {
   }, []);
 
   return (
-    <div className="">
-      <header className="">
-        <nav>
-          <h2>Rick and morty pwa App</h2>
-        </nav>
+    <div>
+      <header>
+        <Header/>
       </header>
       <main>
         <Characters characters={characters} />

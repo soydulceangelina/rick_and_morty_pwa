@@ -1,15 +1,8 @@
 import React from "react";
 
 export default function Pagination({ prev, next, onPrevious, onNext }) {
-  const handlePrevious = () => {
-    onPrevious();
-  };
-
-  const handleNext = () => {
-    onNext();
-  };
   return (
-    <nav>
+    <nav className="pagination">
       <ul>
         {prev && (
           <li>

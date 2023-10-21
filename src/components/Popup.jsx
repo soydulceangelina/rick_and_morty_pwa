@@ -2,7 +2,7 @@ import React from "react";
 // components
 import Card from "./Card";
 // assets
-import close from "../assets/close.png";
+import close from "../assets/close.svg";
 
 export default function Popup({ character, popUp, toggleModal }) {
   if (popUp) {
