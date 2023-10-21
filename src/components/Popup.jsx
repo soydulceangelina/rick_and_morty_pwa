@@ -1,4 +1,8 @@
 import React from "react";
+// components
+import Card from "./Card";
+// assets
+import close from "../assets/close.png";
 
 export default function Popup({ character, popUp, toggleModal }) {
   if (popUp) {
@@ -13,24 +17,14 @@ export default function Popup({ character, popUp, toggleModal }) {
         <div className="popUp">
           <div onClick={toggleModal} className="overlay"></div>
           <div className="popUp-content">
-            <article className="card" onClick={toggleModal}>
-              <img src={character.image} alt={character.name} />
-              <p>
-                <strong>Name:</strong> {character.name}
-              </p>
-              <p>
-                <strong>Gerder:</strong> {character.gender}
-              </p>
-              <p>
-                <strong>Status:</strong> {character.status}
-              </p>
-              <p>
-                <strong>Type:</strong> {character.type ? character.type : "???"}
-              </p>
-            </article>
-            <button className="close-popUp" onClick={toggleModal}>
-              CLOSE
-            </button>
+            <Card
+              item={character}
+              allCharacteristic={true}
+              onClick={toggleModal}
+            />
+            <div className="close-popUp" onClick={toggleModal}>
+              <img src={close} alt="close" />
+            </div>
           </div>
         </div>
       )}
