@@ -1,12 +1,13 @@
 import React from "react";
 
 // assets
-import logo from "../assets/logo.svg";
+import Logo from "../assets/logo.svg";
 
 export default function Header() {
   return (
     <div className="header">
-      <img src={logo} alt="rick and morty logo" />
+      <img src={Logo} alt="rick and morty logo" />
+      <p>Rick and Morty</p>
     </div>
   );
 }

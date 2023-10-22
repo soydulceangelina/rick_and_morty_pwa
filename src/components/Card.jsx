@@ -6,12 +6,14 @@ import Popup from "./Popup";
 import Female from "../assets/female.svg";
 import Male from "../assets/male.svg";
 import Unknown from "../assets/unknown.svg";
+import Genderless from "../assets/genderless.svg";
 import Dead from "../assets/dead.svg";
 
 const genderIcons = {
   Female: Female,
   Male: Male,
   unknown: Unknown,
+  Genderless: Genderless,
 };
 
 export default function Card({ item, allCharacteristic }) {

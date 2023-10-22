@@ -2,7 +2,7 @@ import React from "react";
 // components
 import Card from "./Card";
 // assets
-import close from "../assets/close.svg";
+import Close from "../assets/close.svg";
 
 export default function Popup({ character, popUp, toggleModal }) {
   if (popUp) {
@@ -23,7 +23,7 @@ export default function Popup({ character, popUp, toggleModal }) {
               onClick={toggleModal}
             />
             <div className="close-popUp" onClick={toggleModal}>
-              <img src={close} alt="close" />
+              <img src={Close} alt="close" />
             </div>
           </div>
         </div>

@@ -3,8 +3,8 @@ import axios from "axios";
 
 // components
 import Characters from "./components/Characters";
-import Pagination from "./components/Pagination";
 import Header from "./components/Header";
+import General from "./components/General";
 
 function App() {
   const [characters, setCharacters] = useState([]);
@@ -26,16 +26,6 @@ function App() {
       });
   };
 
-  const handleNextPage = () => {
-    fetchCharacters(info.next);
-    window.scrollTo(0, 0);
-  };
-
-  const handlePreviousPage = () => {
-    fetchCharacters(info.prev);
-    window.scrollTo(0, 0);
-  };
-
   useEffect(() => {
     fetchCharacters(url);
   }, []);
@@ -45,14 +35,9 @@ function App() {
       <header>
         <Header/>
       </header>
-      <main>
-        <Characters characters={characters} />
-        <Pagination
-          prev={info.prev}
-          next={info.next}
-          onPrevious={handlePreviousPage}
-          onNext={handleNextPage}
-        />
+      <main className="main-container">
+        <Characters characters={characters} fetch={fetchCharacters} info={info}/>
+        <General/>
       </main>
     </div>
   );
