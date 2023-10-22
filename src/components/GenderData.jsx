@@ -35,22 +35,22 @@ export default function GenderData() {
       <div className="gender">
         <img src={Male} alt="male icon" />
         <p>Male</p>
-        <p>{maleGender.count}</p>
+        <strong>{maleGender.count}</strong>
       </div>
       <div className="gender">
         <img src={Female} alt="female icon" />
         <p>Female</p>
-        <p>{femaleGender.count}</p>
+        <strong>{femaleGender.count}</strong>
       </div>
       <div className="gender">
         <img src={Unknown} alt="unknown icon" />
         <p>Unknown</p>
-        <p>{unknownGender.count}</p>
+        <strong>{unknownGender.count}</strong>
       </div>
       <div className="gender">
         <img src={Genderless} alt="genderless icon" />
         <p>Genderless</p>
-        <p>{genderlessGender.count}</p>
+        <strong>{genderlessGender.count}</strong>
       </div>
       {error && <Snackbar message={'An error occurred with a request, please try again later 😥'}/>}
     </div>
