@@ -6,14 +6,12 @@ export default function Snackbar({ message, action }) {
     x.className = "show";
     setTimeout(function () {
       x.className = x.className.replace("show", "");
-    }, 5000);
+    }, 3000);
   }
 
   useEffect(() => {
-    if (action) {
-      myFunction();
-    }
-  }, [action]);
-  
+    myFunction();
+  }, []);
+
   return <div id="snackbar">{message}</div>;
 }

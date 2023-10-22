@@ -5,7 +5,7 @@ import Female from "../assets/female.svg";
 import Male from "../assets/male.svg";
 import Unknown from "../assets/unknown.svg";
 import Genderless from "../assets/genderless.svg";
-
+import Snackbar from "./Snackbar";
 const url = "https://rickandmortyapi.com/api/character/?gender=";
 
 const genderUrls = {
@@ -20,12 +20,13 @@ export default function GenderData() {
   const [maleGender, setMaleGender] = useState([]);
   const [unknownGender, setUnknownGender] = useState([]);
   const [genderlessGender, setGenderlessGender] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetchQuery(genderUrls["female"], setFemaleGender);
-    fetchQuery(genderUrls["male"], setMaleGender);
-    fetchQuery(genderUrls["unknown"], setUnknownGender);
-    fetchQuery(genderUrls["genderless"], setGenderlessGender);
+    fetchQuery(genderUrls["female"], setFemaleGender, setError);
+    fetchQuery(genderUrls["male"], setMaleGender, setError);
+    fetchQuery(genderUrls["unknown"], setUnknownGender, setError);
+    fetchQuery(genderUrls["genderless"], setGenderlessGender, setError);
   }, []);
 
   return (
@@ -51,6 +52,7 @@ export default function GenderData() {
         <p>Genderless</p>
         <p>{genderlessGender.count}</p>
       </div>
+      {error && <Snackbar message={'An error occurred with a request, please try again later 😥'}/>}
     </div>
   );
 }
