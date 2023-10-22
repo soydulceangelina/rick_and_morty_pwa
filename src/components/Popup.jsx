@@ -4,7 +4,7 @@ import Card from "./Card";
 // assets
 import Close from "../assets/close.svg";
 
-export default function Popup({ character, popUp, toggleModal }) {
+export default function Popup({ character, popUp, togglePopUp }) {
   if (popUp) {
     document.body.classList.add("active-popUp");
   } else {
@@ -15,14 +15,14 @@ export default function Popup({ character, popUp, toggleModal }) {
     <>
       {popUp && (
         <div className="popUp">
-          <div onClick={toggleModal} className="overlay"></div>
+          <div onClick={togglePopUp} className="overlay"></div>
           <div className="popUp-content">
             <Card
               item={character}
               allCharacteristic={true}
-              onClick={toggleModal}
+              onClick={togglePopUp}
             />
-            <div className="close-popUp" onClick={toggleModal}>
+            <div className="close-popUp" onClick={togglePopUp}>
               <img src={Close} alt="close" />
             </div>
           </div>

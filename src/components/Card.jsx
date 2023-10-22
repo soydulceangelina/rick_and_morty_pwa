@@ -8,6 +8,8 @@ import Male from "../assets/male.svg";
 import Unknown from "../assets/unknown.svg";
 import Genderless from "../assets/genderless.svg";
 import Dead from "../assets/dead.svg";
+import Alive from "../assets/alive.svg";
+import UnknownAlive from "../assets/unknow-alive.svg";
 
 const genderIcons = {
   Female: Female,
@@ -16,10 +18,16 @@ const genderIcons = {
   Genderless: Genderless,
 };
 
+const statusIcons = {
+  Dead: Dead,
+  Alive: Alive,
+  unknown: UnknownAlive,
+};
+
 export default function Card({ item, allCharacteristic }) {
   const [popUp, setPopUp] = useState(false);
 
-  const toggleModal = () => {
+  const togglePopUp = () => {
     setPopUp(!popUp);
   };
 
@@ -28,18 +36,16 @@ export default function Card({ item, allCharacteristic }) {
       <article className="card">
         <div
           className="card-image-container"
-          onClick={allCharacteristic ? null : toggleModal}
+          onClick={allCharacteristic ? null : togglePopUp}
         >
           <img src={item.image} alt={item.name} />
           <div className="card-tags-container">
             <div className="card-tag">
               <img src={genderIcons[item.gender]} alt={item.gender} />
             </div>
-            {item.status === "Dead" && (
-              <div className="card-tag">
-                <img src={Dead} alt={item.status} />
-              </div>
-            )}
+            <div className="card-tag">
+              <img src={statusIcons[item.status]} alt={item.status} />
+            </div>
           </div>
         </div>
         <p className="card-name">{item.name}</p>
@@ -67,7 +73,7 @@ export default function Card({ item, allCharacteristic }) {
           </div>
         )}
       </article>
-      <Popup character={item} popUp={popUp} toggleModal={toggleModal} />
+      <Popup character={item} popUp={popUp} togglePopUp={togglePopUp} />
     </>
   );
 }

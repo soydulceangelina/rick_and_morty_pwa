@@ -175,3 +175,20 @@ body {
   color: $light-color;
   margin-bottom: 20px;
 }
+
+// gender
+.gender-container{
+  background-color: $light-color;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.gender{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.gender img{
+  width: 30px;
+}
