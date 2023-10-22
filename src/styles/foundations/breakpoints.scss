@@ -1,0 +1,17 @@
+$bp-small: 600px;
+$bp-med: 768px;
+$bp-large: 1126px;
+
+$breakpoints: (
+  's':  (max-width:  $bp-small),
+  'm':  (max-width:  $bp-med),
+  'l':  (max-width: $bp-large),
+) !default;
+
+@mixin applyTo($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+}

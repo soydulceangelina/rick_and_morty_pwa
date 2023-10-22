@@ -47,7 +47,7 @@ export default function GenderData() {
         <p>{unknownGender.count}</p>
       </div>
       <div className="gender">
-        <img src={Genderless} alt="unknown icon" />
+        <img src={Genderless} alt="genderless icon" />
         <p>Genderless</p>
         <p>{genderlessGender.count}</p>
       </div>
