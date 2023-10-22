@@ -7,15 +7,14 @@ import General from "./components/General";
 
 function App() {
 
-
   return (
     <div>
       <header>
-        <Header/>
+        <Header />
       </header>
       <main className="main-container">
-        <Characters/>
-        <General/>
+        <Characters />
+        <General />
       </main>
     </div>
   );

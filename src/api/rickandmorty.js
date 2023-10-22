@@ -9,7 +9,7 @@ export const fetchCharacters = (url, setCharacters, setInfo) => {
     })
     .catch((error) => {
       console.error(
-        "There has been a problem with your fetch operation:",
+        "There has been a problem with your fetch characters operation:",
         error
       );
     });
@@ -23,7 +23,7 @@ export const fetchQuery = (url, setQuery) => {
     })
     .catch((error) => {
       console.error(
-        "There has been a problem with your fetch operation:",
+        "There has been a problem with your fetch query operation:",
         error
       );
     });
