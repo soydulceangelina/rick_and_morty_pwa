@@ -1,0 +1,24 @@
+@import '../../styles/global.scss';
+.container {
+  max-width: 400px;
+  background-color: $light-color;
+  border-radius: $border-radius;
+  padding: 10px;
+  h3 {
+    margin-bottom: 15px;
+  }
+  .gender {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+    img {
+      width: 30px;
+    }
+  }
+  @include applyTo("m") {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}

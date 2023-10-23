@@ -1,0 +1,22 @@
+@import '../../styles/global.scss';
+.container {
+  width: 70%;
+  h2 {
+    color: $light-color;
+    margin-bottom: 20px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    align-items: stretch;
+  }
+  @include applyTo("l") {
+    width: 100%;
+  }
+  @include applyTo("m") {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}

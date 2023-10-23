@@ -1,0 +1,17 @@
+@import '../../styles/global.scss';
+.container {
+  width: 25%;
+  h2 {
+    color: $light-color;
+    margin-bottom: 20px;
+  }
+  @include applyTo("l") {
+    width: 100%;
+    padding-bottom: 50px;
+  }
+  @include applyTo("m") {
+    h2 {
+      font-size: 1.2rem;
+    }
+  }
+}

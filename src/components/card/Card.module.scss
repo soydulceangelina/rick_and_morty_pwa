@@ -1,0 +1,39 @@
+@import '../../styles/global.scss';
+.container {
+  padding: 10px;
+  border-radius: $border-radius;
+  background-color: $light-color;
+  color: $dark-color;
+  p {
+    margin-bottom: 5px;
+  }
+  img {
+    border-radius: $border-radius;
+    width: 100%;
+  }
+  .imageContainer {
+    position: relative;
+    .tagsContainer {
+      display: flex;
+      gap: 5px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      .tag img {
+        width: 30px;
+      }
+    }
+  }
+  .name {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .characteristic strong {
+    color: $main-color;
+  }
+  @include applyTo("m") {
+    .name {
+      font-size: 1rem;
+    }
+  }
+}

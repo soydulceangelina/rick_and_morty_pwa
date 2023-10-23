@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { fetchCharacters } from "../api/rickandmorty";
+import { fetchCharacters } from "../../api/rickandmorty";
+import styles from './Character.module.scss';
 // components
-import Card from "./Card";
-import Pagination from "./Pagination";
-import Loader from "./Loader";
-import Snackbar from "./Snackbar";
-import Popup from "./Popup";
+import Card from "../card/Card";
+import Pagination from "../pagination/Pagination";
+import Loader from "../loader/Loader";
+import Snackbar from "../Snackbar";
+import Popup from "../popUp/Popup";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -41,9 +42,9 @@ export default function Characters() {
       {loader ? (
         <Loader />
       ) : (
-        <div className="characters-container">
+        <div className={styles.container}>
           <h2>Characters</h2>
-          <div className="grid">
+          <div className={styles.grid}>
             {characters.map((item, index) => (
               <Card
                 key={index}

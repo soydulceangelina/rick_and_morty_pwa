@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { fetchQuery } from "../api/rickandmorty";
+import { fetchQuery } from "../../api/rickandmorty";
+import styles from './GenderData.module.scss';
 // assets
-import Female from "../assets/female.svg";
-import Male from "../assets/male.svg";
-import Unknown from "../assets/unknown.svg";
-import Genderless from "../assets/genderless.svg";
-import Snackbar from "./Snackbar";
+import Female from "../../assets/female.svg";
+import Male from "../../assets/male.svg";
+import Unknown from "../../assets/unknown.svg";
+import Genderless from "../../assets/genderless.svg";
+// components
+import Snackbar from "../Snackbar";
 const url = "https://rickandmortyapi.com/api/character/?gender=";
 
 const genderUrls = {
@@ -30,24 +32,24 @@ export default function GenderData() {
   }, []);
 
   return (
-    <div className="gender-container">
+    <div className={styles.container}>
       <h3>Characters by gender</h3>
-      <div className="gender">
+      <div className={styles.gender}>
         <img src={Male} alt="male icon" />
         <p>Male</p>
         <strong>{maleGender.count}</strong>
       </div>
-      <div className="gender">
+      <div className={styles.gender}>
         <img src={Female} alt="female icon" />
         <p>Female</p>
         <strong>{femaleGender.count}</strong>
       </div>
-      <div className="gender">
+      <div className={styles.gender}>
         <img src={Unknown} alt="unknown icon" />
         <p>Unknown</p>
         <strong>{unknownGender.count}</strong>
       </div>
-      <div className="gender">
+      <div className={styles.gender}>
         <img src={Genderless} alt="genderless icon" />
         <p>Genderless</p>
         <strong>{genderlessGender.count}</strong>

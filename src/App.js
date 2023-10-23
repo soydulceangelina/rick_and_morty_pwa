@@ -1,9 +1,9 @@
 import React from "react";
 
 // components
-import Header from "./components/Header";
-import Characters from "./components/Characters";
-import General from "./components/General";
+import Header from "./components/header/Header";
+import Characters from "./components/characters/Characters";
+import General from "./components/general/General";
 
 function App() {
 
