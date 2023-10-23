@@ -1,9 +1,8 @@
-<div style="display:flex; gap:15px">
-  <img src="src/assets/logo.svg" alt="Rick and morty logo" style="width:200px;height:100px;" />
-  <h1>Rick and Morty PWA</h1>
-</div>
+<img src="src/assets/logo.svg" alt="Rick and morty logo" style="width:200px;height:200px;" />
 
-# How to run the repository in a local environment
+# Rick and Morty PWA
+
+## How to run the repository in a local environment
 
 Step 1: 
 ```sh
@@ -20,7 +19,7 @@ Step 5:
 $ npm start
 ```
 
-# How to build the app for a production enviroment 
+## How to build the app for a production enviroment 
 
 Step 1: 
 Install [Surge](https://surge.sh/)
