@@ -4,13 +4,16 @@ import { fetchCharacters } from "../api/rickandmorty";
 import Card from "./Card";
 import Pagination from "./Pagination";
 import Loader from "./Loader";
-import Snackbar from './Snackbar'
+import Snackbar from "./Snackbar";
+import Popup from "./Popup";
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState({});
   const [loader, setLoader] = useState(true);
   const [error, setError] = useState(false);
+  const [popUp, setPopUp] = useState(false);
+  const [characterSelected, setCharacterSelected] = useState({});
   const url = "https://rickandmortyapi.com/api/character";
 
   useEffect(() => {
@@ -29,6 +32,10 @@ export default function Characters() {
     window.scrollTo(0, 0);
   };
 
+  const togglePopUp = () => {
+    setPopUp(!popUp);
+  };
+
   return (
     <>
       {loader ? (
@@ -38,7 +45,12 @@ export default function Characters() {
           <h2>Characters</h2>
           <div className="grid">
             {characters.map((item, index) => (
-              <Card key={index} item={item} />
+              <Card
+                key={index}
+                item={item}
+                togglePopUp={togglePopUp}
+                setItem={setCharacterSelected}
+              />
             ))}
           </div>
           <Pagination
@@ -49,7 +61,18 @@ export default function Characters() {
           />
         </div>
       )}
-      {error && <Snackbar message={'An error occurred with a request, please try again later 😥'}/>}
+      {error && (
+        <Snackbar
+          message={
+            "An error occurred with a request, please try again later 😥"
+          }
+        />
+      )}
+      <Popup
+        character={characterSelected}
+        popUp={popUp}
+        togglePopUp={togglePopUp}
+      />
     </>
   );
 }

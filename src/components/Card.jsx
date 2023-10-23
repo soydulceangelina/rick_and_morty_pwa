@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { formatDate } from "../utils/formatDate";
-// components
-import Popup from "./Popup";
 // assets
 import Female from "../assets/female.svg";
 import Male from "../assets/male.svg";
@@ -24,19 +22,23 @@ const statusIcons = {
   unknown: UnknownAlive,
 };
 
-export default function Card({ item, allCharacteristic }) {
-  const [popUp, setPopUp] = useState(false);
-
-  const togglePopUp = () => {
-    setPopUp(!popUp);
-  };
-
+export default function Card({
+  item,
+  allCharacteristic,
+  togglePopUp,
+  setItem,
+}) {
   return (
     <>
       <article className="card">
         <div
           className="card-image-container"
-          onClick={allCharacteristic ? null : togglePopUp}
+          onClick={() => {
+            if (!allCharacteristic) {
+              setItem(item);
+              togglePopUp();
+            }
+          }}
         >
           <img src={item.image} alt={item.name} />
           <div className="card-tags-container">
@@ -73,7 +75,6 @@ export default function Card({ item, allCharacteristic }) {
           </div>
         )}
       </article>
-      <Popup character={item} popUp={popUp} togglePopUp={togglePopUp} />
     </>
   );
 }
